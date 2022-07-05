@@ -1,0 +1,24 @@
+{% extends "Application/padre.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    
+    {% if formulario.errors %}
+
+    <p style="color: rgb(156, 40, 59);"> Los datos ingresados son erróneos</p>
+
+    {% endif %}
+    
+    <form action="" method="POST">{% csrf_token %}
+
+        <table>
+            {{formulario.as_table}}
+        </table>
+
+        <input type="submit", value="Enviar">
+
+    </form>
+
+{% endblock %}
